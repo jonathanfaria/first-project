@@ -1,0 +1,59 @@
+  # a2enmod ssl
+Reinicie o apache:
+
+  # service apache2 restart
+Dentro do diretório de configuração do apache, /etc/apache2, crie uma pasta chamada ssl caso não exista:
+
+  #  mkdir ssl
+Para fins de organização, crie as pastas certs e private dentro da pasta ssl:
+
+  # mkdir ssl/certs ssl/private
+Dentro do pasta ssl gere uma chave privada de 2048 bits:
+
+  # openssl genrsa -des3 -out nomedachavecomsenha.key 2048
+Será solicitada uma senha duas vezes.
+
+Use a chave recém-criada para criar um pedido de certificado:
+
+  #  openssl req -new -key nomedachavecomsenha.key -out  nomedachave.csr
+Serão solicitadas algumas informações:
+
+A senha que foi inserida para a chave anteriormente criada;
+o codigo do País com duas letras;
+nome do estado;
+nome da cidade;
+Nome da organização/instituição;
+Nome da unidade da organização/instituição;
+Common Name; (Esse é o campo mais importante onde se deve colocar o nome ou o IP do seu servidor/domínio);
+Endereço de e-mail;
+Outros atributos extras opcionais;
+Execute o comando abaixo para gerar uma nova chave sem uma senha:
+
+  # openssl rsa -in nomedachavecomsenha.key -out nomedachavesemsenha.key
+Será solicitada a senha da chave novamente.
+
+Use este comando para criar o seu certificado auto-assinado:
+
+  # openssl x509 -req -in nomedachave.csr -days 365 -signkey nomedachavesemsenha.key -out nomedocertificado.crt
+Ainda dentro da pasta ssl copie a chave e o certificado para as pastas adequadas:
+
+  # cp nomedocertificado.crt certs/  ; cp nomedachavesemsenha.key private/
+Vá para a pasta sites-available dentro da pasta do apache e com o editor da sua preferência edite o arquivo de configuração do site ssl, no meu caso o arquivo default-ssl.conf (em versões mais antigas do apache esse arquivo deve se chamar apenas default-ssl, sem o .conf),
+
+Comente as seguintes linhas (acrescentando no início da linha o caractere #):
+
+  #SSLCertificateFile     /etc/ssl/certs/ssl-cert-snakeoil.pem
+  #SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+E adicione as linhas com os caminhos para os seus certificados:
+
+  SSLCertificateFile /etc/apache2/ssl/certs/nomedocertificado.crt
+  SSLCertificateKeyFile /etc/apache2/ssl/private/nomedachavesemsenha.key
+Ative o site default-ssl:
+
+  # a2ensite default-ssl
+Reinicie ou recarregue o apache:
+
+  # service apache2 restart
+ou
+
+  # service apache2 reload
