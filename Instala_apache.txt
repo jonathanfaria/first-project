@@ -9,7 +9,7 @@ setenforce 0
 2-systemctl stop e disable firewalld. Por garantia parar e desabilitar também o iptables
 
 Instalar pacotes necessários
-1- yum install net-tools gcc vim 
+1- yum install net-tools gcc vim epel-release
 
 Aumentar o limite de conexões e abertura de arquivos simultâneos
 #!/bin/bash
@@ -63,7 +63,17 @@ Criar VirtualHost para melhor gerencia de configurações e mais personalizaçã
 </VirtualHost>
 
 =================================================================================================
+Access Log em tempo Real
 
+1-Instalar o GoAccess
+wget http://tar.goaccess.io/goaccess-1.2.tar.gz
+tar -xzvf goaccess-1.2.tar.gz
+cd goaccess-1.2
+./configure --enable-utf8 --enable-geoip=legacy
+make
+make install
+
+=================================================================================================
 
 Segurança no Apache
 
