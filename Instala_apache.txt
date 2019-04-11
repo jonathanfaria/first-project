@@ -1,0 +1,119 @@
+Instalação de Servidor Apache CentOS 7
+==============================================================================================
+Preparação do Ambiente:
+
+Desabilitar Firewall
+1-Editar o arquivo /etc/selinux/conf
+SELINUX=disabled
+setenforce 0
+2-systemctl stop e disable firewalld. Por garantia parar e desabilitar também o iptables
+
+Instalar pacotes necessários
+1- yum install net-tools gcc vim 
+
+Aumentar o limite de conexões e abertura de arquivos simultâneos
+#!/bin/bash
+sh -c "echo -e '* soft    nofile  1024\n' >> /etc/security/limits.conf"
+sh -c "echo -e '* hard    nofile  65535\n' >> /etc/security/limits.conf"
+sh -c "echo -e 'sesssion required /lib64/security/pam_limits.so\n' >> /etc/pam.d/login"
+sh -c "echo -e 'fs.file-max = 65535\n' >> /etc/sysctl.conf"
+sysctl -p
+cat /proc/sys/fs/file-max
+ulimit -n -H
+==============================================================================================
+Instalação do Apache e PHP
+
+1- yum install httpd php 
+2- enable e start do serviço httpd
+
+
+===============================================================================================
+Comandos do apache no CentOS
+/usr/sbin/httpd -v - Mostra a versão 
+/usr/sbin/httpd -L - Lista os módulos 
+/usr/sbin/httpd -M Lista os módulos carregados(Static and Shared)
+
+Criar VirtualHost para melhor gerencia de configurações e mais personalização
+=================================================================================================
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@apachevm.com
+    DocumentRoot /var/www/apachevm/html/videopage
+    ServerName www.apachevm.com
+    ErrorLog logs/www.apachevm.com-error_log
+    CustomLog "| /usr/sbin/rotatelogs /etc/httpd/logs/www.apachevm-access_log.%Y-%m-%d-%H_%M_%S 20K" udemyformat
+
+# Habilita o monitoramento através da url /server-status(mod_status)
+<Location /server-status>  
+    SetHandler server-status
+    Order deny,allow
+  #  Deny from all
+    Allow from all
+</Location>
+
+# Limita o acesso a diretórios informados na politica
+<Directory "/var/www/apachevm/html/videopage/admin/">
+   Order allow,deny
+   Deny from all
+   <Files "liberado.txt">
+      Allow from all
+   </Files>
+</Directory>
+
+</VirtualHost>
+
+=================================================================================================
+
+
+Segurança no Apache
+
+Verificação de status TRACE:
+
+telnet url porta
+
+Digitar TRACE / HTTP/1.0
+Host:www.site.com Enter Enter
+
+curl -X TRACE -H "Cookie: name=value" www.site.com
+
+
+Desabilitar TRACE
+
+TraceEnable off
+
+Ocultar informações do Apache(OS, Version):
+
+ServerTokens Prod
+
+ServerSignature off
+==================================================================================================
+Utilizando ssl no Apache com certificado autoassinado
+
+1-Instalar openssl mod_ssl
+2-Gerar e utilizar certificado
+
+openssl genrsa -out ca.key 2048
+openssl req -new -key ca.key -out ca.csr(Preencher os Campos)
+openssl x509 -req -days 365 -in ca.csr -signkey ca.key -out ca.crt
+
+Copiar .crt para /etc/pki/tls/certs/
+Copiar .key para /etc/pki/tls/private/
+
+Criar virtualhost apontando para porta 443
+
+<VirtualHost *:443>
+	ErrorLog logs/apachevm_ssl_error.log
+	TransferLog logs/apachevm_ssl_access_log
+	LogLevel warn
+	SSLEngine on
+	SSLCertificateFile /etc/pki/tls/certs/ca.crt
+	SSLCertificateKeyFile /etc/pki/tls/private/ca.key
+	SSLProtocol all -SSLv2
+	    SSLCipherSuite DEFAULT:EXP!SSLv2:!DES:!IDEA:!SEED:+3DES
+	<Directory /var/www/apachevm/html/videopage>
+	   AllowOverride All
+	</Directory>
+	DocumentRoot /var/www/apachevm/html/videopage
+	Servername www.apachevm.com
+</VirtualHost>
+==================================================================================================
