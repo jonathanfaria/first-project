@@ -1,0 +1,27 @@
+ - hosts: web
+   user: root
+
+   tasks:
+     - name: 'Verify hostname'
+       shell: >
+         cat /proc/sys/kernel/hostname
+       register: result
+
+     - debug:
+         msg: "{{result.stdout}}"
+
+     - name: 'Set the file attrib'
+       shell: chattr -i /etc/hosts
+
+     - name: 'Set the hosts file'
+       shell: |
+         echo "127.0.0.1	{{ result.stdout }}" > /etc/hosts
+         echo "10.202.11.51 	gw1" >> /etc/hosts
+         echo "10.202.11.52 	gw2" >> /etc/hosts
+         echo "104.41.40.142	vpnconv.conectcar.com" >> /etc/hosts
+         echo "104.41.47.199 	conectpark.conectcar.com" >> /etc/hosts
+         echo "10.202.11.50 	sltproxy.conectcar.com" >> /etc/hosts
+         echo "191.232.185.16 	conectparkapi.conectcar.com" >> /etc/hosts
+
+     - name: 'Set the hosts file'
+       shell: chattr +i /etc/hosts

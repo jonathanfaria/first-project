@@ -1,0 +1,15 @@
+--- 
+ - hosts: all 
+ - name: Teste IPTables
+   iptables:
+     chain: INPUT
+     policy: DROP
+   name: test
+   iptables:
+     chain: INPUT
+     action: append
+     in_interface: lo
+     protocol: tcp
+     jump: ACCEPT    
+
+... 

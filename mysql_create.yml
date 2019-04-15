@@ -1,0 +1,70 @@
+ - hosts: web
+   user: root
+
+   tasks:
+     - name: 'Install MariaDB-Server on CentOS Servers'
+       yum: 
+         name: mariadb-server 
+         state: present
+
+     - name: 'Install Python-Mysqldb'
+       yum:
+         name: MySQL-python
+         state: present
+
+     - name: 'Install MariaDB'
+       yum: 
+         name: mariadb
+         state: present
+
+     - name: 'Verify if Mysql is runing'
+       service: 
+         name: mariadb
+         state: started
+         enabled: yes        
+
+     - name: 'MariaDB remove anonymous access'
+       mysql_user: name="" host={{ item }} state=absent
+       with_items:
+         - localhost
+         - "{{ ansible_fqdn }}"
+
+     - name: 'MariaDB remove test database'
+       mysql_db: name=test state=absent
+
+     - name: 'MariaDB change root pass'
+       mysql_user: name=root host={{ item }} password='conectpark'
+       with_items:
+         - "{{ansible_fqdn}}"
+         - 127.0.0.1
+         - ::1
+         - localhost
+
+     - name: 'MariaDB publish file .my.cnf in the root home'
+       template:
+         src: /root/.my.cnf  
+         dest: /root/.my.cnf
+
+     - name: 'Create database conectpark'
+       mysql_db:
+         name: conectpark
+         state: present
+
+     - name: 'Create user conectpark'
+       mysql_user:
+         name: conectpark
+         password: "conectpark"
+         priv: '*.*:ALL,GRANT'
+         state: present
+         append_privs: true
+
+     - name: 'Copy conectpark empty to root home'
+       template:
+         src: /root/1.17.sql
+         dest: /root/1.17.sql
+ 
+     - name: 'Mysql restore empty file'
+       mysql_db:
+         state: import
+         name: conectpark
+         target: /root/1.17.sql

@@ -1,0 +1,71 @@
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 8000 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 3306 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 22 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 9111 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 8081 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 8080 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 25 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 80 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 8088 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u4  --dport 9000 -j DROP
+/sbin/service iptables save
+
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 8000 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 3306 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 22 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 9111 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 8081 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 8080 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 25 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 80 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 8088 -j DROP
+iptables -A INPUT -p tcp -i enp0s20f0u7  --dport 9000 -j DROP
+
+
+iptables -A INPUT -p tcp -i em2  --dport 8000 -j DROP
+iptables -A INPUT -p tcp -i em2  --dport 3306 -j DROP
+iptables -A INPUT -p tcp -i em2  --dport 22 -j DROP
+iptables -A INPUT -p tcp -i em2  --dport 9111 -j DROP
+iptables -A INPUT -p tcp -i em2  --dport 8081 -j DROP
+iptables -A INPUT -p tcp -i em2  --dport 8080 -j DROP
+iptables -A INPUT -p tcp -i em2  --dport 25 -j DROP
+iptables -A INPUT -p tcp -i em2  --dport 80 -j DROP
+iptables -A INPUT -p tcp -i em2  --dport 8088 -j DROP
+iptables -A INPUT -p tcp -i em2  --dport 9000 -j DROP
+
+
+
+passtsilva
+
+yum -y install epel-release mariadb-server mariadb lighttpd lighttpd-fastcgi php-cli mono-web.x86_64 openvpn.x86_64 ntp php-mysql  netcat vim  net-snmp dmidecode socat nmap dialog spawn xinetd sysstat openssl-devel net-snmp-utils postfix mc iptraf rsync bc net-tools xinetd sysstat net-snmp-utils gcc make 
+
+systemctl stop iptables.service
+systemctl stop firewalld.service
+systemctl disable firewalld.service
+systemctl disable iptables.service
+systemctl enable snmpd.service
+systemctl enable lighttpd.service
+systemctl start lighttpd.service
+systemctl enable mariadb.service
+systemctl start mariadb.service
+/bin/systemctl stop sendmail
+yum -y remove sendmail
+yum -y remove ssmtp
+chkconfig network on
+
+
+
+
+cnt_mono4-1.0-1.x86_64
+Conectpark.SituacaoTag_v2.2.3.0-1.0-1.x86_64
+Conectpark.EnvioMensalistas_v1.2.0-1.0-1.x86_64
+Conectpark_V_1.17.7-1.0-1.x86_64
+Conectpark.EnvioTransacoesPendentes_v1.2.0-1.0-1.x86_64
+Conectpark.TagsInativas_v1-1.0-1.x86_64
+Conectpark_cli_v1.9.1-1.0-1.x86_64
+Conectpark.TagsAtivas_v1-1.0-1.x86_64
+Conectpark.EnvioTransits_v1.1.1-1.0-1.x86_64
+Conectpark_api_v1.7.0-1.0-1.x86_64
+
+
+

@@ -1,0 +1,9 @@
+- hosts: web
+  tasks:
+    - name: Installs Rsync on KeepAlived web server
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - rsync
+        state: latest
