@@ -1,0 +1,413 @@
+Reincidência 30 dias: (   ) Sim (   ) Não
+Contato:
+Telefone/Email: 
+Motivo: 
+Pendencia: 
+Ação:
+
+
+49. 
+pista 8 
+
+
+
+Problema encontrado: Conectpark Down
+
+Ações realizadas: 
+
+- Encerrado todos os serviços do conectpark.
+- Realizado restart geral.
+
+Resumo das ações de validação: 
+
+-
+- Após este procedimento, o problema foi corrigido.
+
+
+IGUATEMI BRASILIA - 6037
+
+lxbranp001
+
+
+/var/www/lighttpd/conectpark/conectpark_cli/includes/config.php
+
+$ip_vpn = exec("ip addr show tun1 | grep inet | awk {'print$2'}");
+
+$ip_vpn = exec("ip addr show tun1 | grep inet | awk {'print$2'} | head -1");
+
+
+
+EMBRATEL 
+4G
+
+
+
+
+Mascara de Encerramento Chamados Qualitor
+
+Resumo do caso: Conectpark Down
+Causa Raiz: Serviço Parado
+Ações Realizadas: Restart da aplicação
+Data/Hora Normalização: 26/03/2019  
+
+Resumo do caso: Transações Pendentes
+Causa Raiz: Serviço Parado
+Ações Realizadas: Restart da aplicação
+Data/Hora Normalização: 20/03/2019 
+
+Resumo do caso: Transações com Erro
+Causa Raiz: Transações com Erro
+Ações Realizadas: Inclusão de transações manuais
+Data/Hora Normalização: 21/01/2018  
+
+Resumo do caso: Erro de conexão SLT x Leitor
+Causa Raiz: Intermitência na rede local
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização: 25/03/2019  
+
+Resumo do caso: Erro de conexão SLT x Leitor
+Causa Raiz: Intermitência na rede local
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização: 25/09/2018  
+
+Resumo do caso: Erro Entrada de Clientes
+Causa Raiz: Sem leitura da tag informada
+Ações Realizadas: Normalizado sem intervenção, leitores operando normalmente
+Data/Hora Normalização: 25/09/2018  
+
+Resumo do caso: Solicitação de Endereços de equipamentos
+Causa Raiz: Solicitação de Endereços de equipamentos(Veloe)
+Ações Realizadas: Informações anexas
+Data/Hora Normalização: 25/09/2018  
+
+Resumo do caso: SLT Down
+Causa Raiz: Serviço Parado
+Ações Realizadas: Restart da aplicação
+Data/Hora Normalização: 03/01/2018  
+
+Resumo do caso: CPU 100%
+Causa Raiz: Serviço Conectpark
+Ações Realizadas: Restart da aplicação
+Data/Hora Normalização: 22/03/2019 
+
+Resumo do caso: Load Average
+Causa Raiz: Serviço Conectpark
+Ações Realizadas: Restart da aplicação
+Data/Hora Normalização: 26/03/2019 
+
+Resumo do caso: Limite de sessões
+Causa Raiz: Mais de 3 conexões simultaneas 
+Ações Realizadas: Sessões encerradas
+Data/Hora Normalização: 29/11/2018 
+
+Resumo do caso: Load Average
+Causa Raiz: Serviço Conectpark
+Ações Realizadas: Restart da aplicação
+Data/Hora Normalização: 15/10/2018 
+
+Resumo do caso: Acesso de rede
+Causa Raiz: Reset de senha de compartilhamento
+Ações Realizadas: Reset de senha de compartilhamento
+Data/Hora Normalização: 15/10/2018 
+
+Resumo do caso: Cadastro Leitor
+Causa Raiz: Alerta indevido
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização: 15/10/2018
+
+Resumo do caso: Conectpark Versão Incorreta
+Causa Raiz: Versão incorreta(deploy)
+Ações Realizadas: Normalizado após atualização de versão
+Data/Hora Normalização: 21/01/2019
+
+Resumo do caso: Serviço Parado
+Causa Raiz: Servidor sem conexão
+Ações Realizadas: Instalado Modem 4G
+Data/Hora Normalização: 15/10/2018 
+
+Resumo do caso: Conectpark.EnvioTransits Down
+Causa Raiz: Serviço Parado
+Ações Realizadas: Restart da aplicação
+Data/Hora Normalização: 20/03/2019 
+
+Resumo do caso: Conectpark.SituacaoTag Down
+Causa Raiz: Serviço Parado
+Ações Realizadas: Restart da aplicação
+Data/Hora Normalização: 26/03/2019 
+
+Resumo do caso: Retirada de Mensalistas
+Causa Raiz: Veículo Mensalista preso no pátio
+Ações Realizadas: Efetuado procedimento de retirada conforme documento ITC-PRD-058
+Data/Hora Normalização: 22/03/2019 
+
+Resumo do caso: Leitor Indisponível 
+Causa Raiz: Equipamento danificado
+Ações Realizadas: Normalizado após visita técnica
+Data/Hora Normalização: 21/03/2019 
+
+Resumo do caso: Leitor Indisponível SP
+Causa Raiz: Equipamento sem comunicação
+Ações Realizadas: Normalizado após atuação Sem Parar
+Data/Hora Normalização: 20/03/2019 
+
+Resumo do caso: Leitor Indisponível 
+Causa Raiz: Equipamento sem conexão
+Ações Realizadas: Normalizado sem intervenção técnica
+Data/Hora Normalização: 22/03/2019
+
+Resumo do caso: Pista Indisponível 
+Causa Raiz: Equipamento sem conexão
+Ações Realizadas: Normalizado sem intervenção técnica
+Data/Hora Normalização: 21/03/2019
+
+
+Resumo do caso:  Node Down
+Causa Raiz: Servidor sem comunicação
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização:  26/03/2019
+
+Resumo do caso:  FVAL Port Down
+Causa Raiz: Serviço parado
+Ações Realizadas: Efetuado restart da aplicação
+Data/Hora Normalização:  26/03/2019
+
+Resumo do caso:  Mysql Port Down
+Causa Raiz: Serviço parado
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização:  27/03/2019
+
+Resumo do caso:  Database Down
+Causa Raiz: Limite de conexões atingido
+Ações Realizadas: Efetuado flush nas conexões da database
+Data/Hora Normalização:  25/03/2019
+
+Resumo do caso:  Ultimo Trafegado Envio
+Causa Raiz: Atraso no envio
+Ações Realizadas: Normalizado após ajustes Accesstage
+Data/Hora Normalização:  26/03/2019
+
+Resumo do caso:  Service Apus Down
+Causa Raiz: serviço Apus parado
+Ações Realizadas: Normalizado após restart da aplicação
+Data/Hora Normalização:  16/10/2018
+
+
+Resumo do caso:  Critical Entrada/Saida
+Causa Raiz: Rede Local
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização:  21/03/2019
+
+TAG MARCIO
+2001739229
+
+192.168.0.132 SA02 Atual e vai para SA08
+192.168.0.135
+
+
+
+10.10.12.218
+10.10.12.62
+10.10.12.58
+Parei 10.10.12.58
+
+Alterar linha especifica
+sed -i '13i\max_connect_errors=10000' /etc/my.cnf
+
+
+
+Resumo do caso:  Totem Com erro
+Causa Raiz: Integradora
+Ações Realizadas: Normalizado após ação da integradora
+Data/Hora Normalização:  25/03/2019
+
+Resumo do caso:  Falha de passagens
+Causa Raiz: Integradora
+Ações Realizadas: Em tratativa no chamado 4772258
+Data/Hora Normalização:  21/03/2019
+
+4772258
+
+Resumo do caso:  Totem Indisponível
+Causa Raiz: Rede Local
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização:  26/03/2019
+
+Resumo do caso:  Totem Indisponível
+Causa Raiz: serviço conectpark parado
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização:  22/03/2019
+
+Resumo do caso:  Indice falha de passagens
+Causa Raiz: Integradora
+Ações Realizadas: Normalizado após ação da integradora
+Data/Hora Normalização:  15/10/2018
+
+Resumo do caso:  OSA Inválida
+Causa Raiz: Integradora
+Ações Realizadas: Normalizado após ação da integradora
+Data/Hora Normalização:  22/03/2019
+
+Resumo do caso:  Memória 90%
+Causa Raiz: Antivirús 
+Ações Realizadas: Normalizado após eliminação de processos ociosos
+Data/Hora Normalização: 16/10/2018
+
+Resumo do caso:  Arquivo de Log Faltando
+Causa Raiz: Serviço Cron Parado 
+Ações Realizadas: Normalizado após restart do serviço
+Data/Hora Normalização:  08/01/2018
+
+Resumo do caso:  Arquivo desatualizado
+Causa Raiz: Serviço Cron Parado 
+Ações Realizadas: Normalizado após restart do serviço
+Data/Hora Normalização:  20/03/2019
+
+Resumo do caso:  Plugin faltando
+Causa Raiz: Atualização do servidor
+Ações Realizadas: Plugins Flex instalados após atualização do servidor
+Data/Hora Normalização:  20/03/2019
+
+Resumo do caso:  Backup não executado
+Causa Raiz: Serviço Parado 
+Ações Realizadas: Normalizado após restart do serviço
+Data/Hora Normalização:  25/03/2019
+
+Resumo do caso:  Erro Conexão SLT X leitor
+Causa Raiz: Leitor desconectando(Drop Connection)
+Ações Realizadas: Normalizado após reinstalação do firmware
+Data/Hora Normalização:  22/03/2019
+
+Resumo do caso:  Falha de integração
+Causa Raiz: Totem não cancela entrada
+Ações Realizadas: Normalizado após atuação da integradora
+Data/Hora Normalização:  21/03/2019
+
+
+Resumo do caso:  Lista Não consumida
+Causa Raiz: Arquivos não removidos do diretório EDI
+Ações Realizadas: Normalizado após ação do conveniado
+Data/Hora Normalização:  10/12/2018
+
+Resumo do caso:  Antena Travada
+Causa Raiz: Leitor Travado
+Ações Realizadas: Normalizado após restart do equipamento
+Data/Hora Normalização:  25/03/2019
+
+Reincidência 30 dias: (  x ) Sim (   ) Não
+Contato: Uelinton
+Telefone/Email: 
+Motivo: cobranças indevidas e um numero grande de solicitações de estorno.
+Pendencia: Verificar problemas de integração, aplicação Tag Pag Auto WPS, cancelamento indevido e cobranças duplicadas (Chamados 4641566, 4642995, 4664493)
+Ação: Agendar visita conjunta WPS X Conectcar
+
+4641566
+4642995
+4664493
+
+Resumo do caso:  Discos em uso acima de 90%
+Causa Raiz: Logs de sistema acumulados
+Ações Realizadas: Normalizado após compactar logs de sistema antigos
+Data/Hora Normalização:  21/03/2019
+
+Resumo do caso:  CNT Safe Mode
+Causa Raiz: Parametro incorreto
+Ações Realizadas: Normalizado após ajuste nas configurações do serviço EnvioTransaçõesPendentes
+Data/Hora Normalização:  14/08/2018
+
+Resumo do caso:  Erro Certificado
+Causa Raiz: Certificado não instalado corretamente
+Ações Realizadas: Certificado instalado 
+Data/Hora Normalização:  22/03/2019
+
+Resumo do caso:  Instalação de modem 4g
+Causa Raiz: Intermitência no link
+Ações Realizadas: Instalação de modem 4g 
+Data/Hora Normalização:  31/01/2019
+
+Resumo do caso:  ANTFAULT
+Causa Raiz: Falha de Leitura
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização:  25/03/2019
+
+Resumo do caso:  Falha de leitura
+Causa Raiz: Falha de Leitura
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização:  20/03/2019
+
+Resumo do caso:  Swap Acima de 50%
+Causa Raiz: Configurações Mysql
+Ações Realizadas: Efetuado ajuste de configuração
+Data/Hora Normalização:  26/03/2019
+
+
+DATA ABERTURA:
+SOLICITANTE: ( Nome / Telefone / e-mail)
+SOLICITAÇÃO:
+AÇÃO:
+PREVISÃO:
+DIAGNSOTICO:
+DATA ENCERRAMENTO:
+
+
+Marcel
+
+31988047188
+Rodney
+
+
+Monte Carmo
+
+
+
+
+Jaqueline
+
+
+Nepos 
+
+
+suporte@nepos.com.br
+ 
+Viavalegarden
+
+
+
+982550197
+Bruno
+
+
+29/06 08:00 
+
+bruno.mouradesouza227@hotmail.com
+
+
+3688575
+4492426
+
+
+
+
+tail -1000 /opt/slt/log/current.txt | fgrep [REPO] | awk '{print $27}'
+REPO 
+
+
+
+************
+
+
+Ariadne ou Henrique
+19998013164
+
+
+
+monitoramento 
+IGDd5tIKxW
+
+
+marcus.diniz@estapar.com.br
+
+srvosb2
+
+
+
+Visita Técnica agendada para dia 01/10 as 14:00 horas. O alerta ficará suspenso até a data da visita.

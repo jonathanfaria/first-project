@@ -1,0 +1,222 @@
+Sistema de chamados
+qualitor
+flex.prod
+Fl3xV1sion
+
+Flexvision
+jonathan.faria	
+LP23fJ
+
+sed -i 's/<\NewKeepAlive>false<\/NewKeepAlive>/<\NewKeepAlive>true<\/NewKeepAlive>/' config.xml
+
+
+
+Usuario gateway 51
+jonathan.faria
+J8b4#tvb1@#$%12
+
+monitoramento
+IGDd5tIKxW
+
+
+
+
+Usuario gateway 53
+conectar.dtc\jonathan.faria
+J8b4#tvb1@#
+
+Newco2018
+fv.jonathanfaria@conectcar.com
+
+
+logar no servidor das praças
+
+jfaria@ ## Endereço IP
+passjfaria
+
+
+gwcnt senha
+
+Proc@O@cudorP
+r@C585tcenoC
+
+root
+CntLx585C@r
+
+resolução de problemas
+
+Arquivo de configuração de leitores e antenas
+/opt/slt/configpista
+verificar arquivo ifpista.ini
+
+Log de passagens:
+/opt/slt/log/current.txt
+
+Após alterar configs
+/opt/script/restart_geral.sh
+
+
+verifica a passagem pela placa
+/opt/conectpark/conectPark.log	
+
+
+slt	
+
+
+Administrador das pontas Windows
+.\administrator
+Pr0c@2017
+
+
+tailf /opt/conectpark/conectPark.log
+
+/opt/Conectpark.SituacaoTag/Conectpark.SituacaoTag.log
+/opt/Conectpark.EnvioMensalistas/Conectpark.EnvioMensalistas.log  
+/opt/Conectpark.EnvioTransits/Conectpark.EnvioTransits.log  
+
+
+socat tcp4-listen:10011,fork tcp4:192.168.0.239:80 &
+
+
+11 94100-5390 Guilherme
+
+
+ 
+
+
+
+
+./2015-08/LOG_20150804.txt.gz.gz
+
+
+
+xinetd restart
+
+lighttpd restart
+
+restart geral
+
+
+
+Sem Parar Abrir chamado
+1130049599
+
+
+
+
+Cláudio Estapar Itaipu/Bay Market/Uptown/
+
+21 99670-2954
+
+21997957605 marcos
+
+
+Produção
+(11) 4083-7483
+
+
+
+
+a9u5serviC3S - senha antiga
+a9u5serviC3S#pr0d - senha nova
+
+Adm Local
+M0sK@2015 - Senha nova
+P@ssw0rd10.8 - Senha antiga
+
+Adm IDRAC
+C0nectC@r2014iDRAC
+
+suporte
+conectcar@2015
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ssh -n -q gwcnt@10.10.3.126 "sudo /opt/script/restart_geral.sh"
+
+
+
+
+
+
+
+(11)99781-4154 Plantão AccessStage
+
+
+
+
+
+11-4083-7483 
+
+
+
+
+49
+
+45
+
+Alexandre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
