@@ -1,0 +1,13 @@
+[mysqld]
+
+innodb_buffer_pool_size = 500M
+#This should be a value between 50% and 75% of the server's total RAM. 
+#It should be equal to or less than the size of the database.
+
+innodb_flush_log_at_trx_commit = 0
+#This setting offers a significant trade-off between performance and reliability. 
+#When set to 0, database performance is greatly increased. 
+#However, up to 1 second of transactions can be lost in a crash.
+
+innodb_flush_method = O_DIRECT
+#Set this to O_DIRECT in order to avoid double buffering data.
