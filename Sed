@@ -1,0 +1,7 @@
+sed '/<KeepAlive>/,/<\/KeepAlive>/d' /opt/conectpark/config.xml; sed '671i\\n   <KeepAlive>\n      <Retries>5</Retries>\n      <Enable>true</Enable>\n      <TimerIntervalMs>12000</TimerIntervalMs>\n      <RetryIntervalMsOnError>1000</RetryIntervalMsOnError>\n      <TimeoutMs>5000</TimeoutMs>\n   </KeepAlive>' /opt/conectpark/config.xml 
+
+sed '/<KeepAlive>/,/<\/KeepAlive>/d' /opt/conectpark/config.xml 
+
+
+OFICIAL
+sed '671a\\n   <KeepAlive>\n      <Retries>5</Retries>\n      <Enable>true</Enable>\n      <TimerIntervalMs>12000</TimerIntervalMs>\n      <RetryIntervalMsOnError>1000</RetryIntervalMsOnError>\n      <TimeoutMs>5000</TimeoutMs>\n   </KeepAlive>\n' /opt/conectpark/config.xml
