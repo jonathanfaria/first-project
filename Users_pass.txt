@@ -7,6 +7,9 @@ Flexvision
 jonathan.faria	
 LP23fJ
 
+XML TAG
+sed -n 's:.*<Port>\(.*\)</Port>.*:\1:p' /opt/conectpark/config.xml
+
 sed -i 's/<\NewKeepAlive>false<\/NewKeepAlive>/<\NewKeepAlive>true<\/NewKeepAlive>/' config.xml
 
 
@@ -29,9 +32,9 @@ Newco2018
 fv.jonathanfaria@conectcar.com
 
 
-logar no servidor das praÁas
+logar no servidor das pra√ßas
 
-jfaria@ ## EndereÁo IP
+jfaria@ ## Endere√ßo IP
 passjfaria
 
 
@@ -43,16 +46,16 @@ r@C585tcenoC
 root
 CntLx585C@r
 
-resoluÁ„o de problemas
+resolu√ß√£o de problemas
 
-Arquivo de configuraÁ„o de leitores e antenas
+Arquivo de configura√ß√£o de leitores e antenas
 /opt/slt/configpista
 verificar arquivo ifpista.ini
 
 Log de passagens:
 /opt/slt/log/current.txt
 
-ApÛs alterar configs
+Ap√≥s alterar configs
 /opt/script/restart_geral.sh
 
 
@@ -104,14 +107,14 @@ Sem Parar Abrir chamado
 
 
 
-Cl·udio Estapar Itaipu/Bay Market/Uptown/
+Cl√°udio Estapar Itaipu/Bay Market/Uptown/
 
 21 99670-2954
 
 21997957605 marcos
 
 
-ProduÁ„o
+Produ√ß√£o
 (11) 4083-7483
 
 
@@ -164,7 +167,7 @@ ssh -n -q gwcnt@10.10.3.126 "sudo /opt/script/restart_geral.sh"
 
 
 
-(11)99781-4154 Plant„o AccessStage
+(11)99781-4154 Plant√£o AccessStage
 
 
 
