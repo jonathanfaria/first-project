@@ -50,6 +50,11 @@ Causa Raiz: Serviço Parado
 Ações Realizadas: Restart da aplicação
 Data/Hora Normalização: 26/03/2019  
 
+Resumo do caso: Erro Permissão
+Causa Raiz: Alerta indevido
+Ações Realizadas: Normalizado sem intervenção
+Data/Hora Normalização: 07/10/2019  
+
 Resumo do caso: Transações Pendentes
 Causa Raiz: Serviço Parado
 Ações Realizadas: Restart da aplicação
