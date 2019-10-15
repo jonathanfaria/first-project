@@ -45,6 +45,11 @@ EMBRATEL
 
 Mascara de Encerramento Chamados Qualitor
 
+Resumo do caso: Erro de Integração
+Causa Raiz: Erro de Integração
+Ações Realizadas: Normalizado após atuação da integradora
+Data/Hora Normalização: 15/10/2019 
+
 Resumo do caso: Conectpark Down
 Causa Raiz: Serviço Parado
 Ações Realizadas: Restart da aplicação
