@@ -3,6 +3,12 @@ qualitor
 flex.prod
 Fl3xV1sion
 
+base Flex
+10.202.11.115
+flexvision
+f1l2e3x4
+mysql
+
 Flexvision
 jonathan.faria	
 LP23fJ
